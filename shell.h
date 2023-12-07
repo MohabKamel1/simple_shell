@@ -65,7 +65,7 @@ typedef struct liststr
  * @cmd_buf: input
  * @cmd_buf_type: input
  * @readfd: input
- * histcount: input
+ * @histcount: input
  */
 
 typedef struct passinfo
@@ -95,7 +95,7 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- * struct builtin _ builtin string
+ * struct builtin - builtin string
  * @type: input
  * @func: input
  */
@@ -112,7 +112,7 @@ void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
 int is_cmd(info_t *, char *);
-char *dup_chars(char *, int , int);
+char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 int loophsh(char **);
