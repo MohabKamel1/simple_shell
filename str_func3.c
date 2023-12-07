@@ -32,14 +32,14 @@ char *_strncppy(char *dst, char *src, int n)
 }
 
 /**
- * *_strconcat - concat. two strings
+ * *_strnconcat - concat. two strings
  * @dst: input
  * @src: input
  * @n: input
  * Return: concat. strings
  */
 
-char *_strconcat(char *dst, char *src, int n)
+char *_stnrconcat(char *dst, char *src, int n)
 {
 	int i, j;
 	char *s = dst;
