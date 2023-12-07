@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strcppy - copies strings
+ * *_strcppy - copies strings
  * @dst: input
  * @src: input
  * Return: pointer to dst
@@ -23,7 +23,7 @@ char *_strcppy(char *dst, char *src)
 }
 
 /**
- * _strdupp - duplicates strings
+ * *_strdupp - duplicates strings
  * @str: input
  * Return: pointer to duplicated
  */

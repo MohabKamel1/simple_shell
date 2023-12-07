@@ -41,7 +41,7 @@ int _strcompar(char *s1, char *s2)
 }
 
 /**
- * starts_by - if needle starts by haystack
+ * *starts_by - if needle starts by haystack
  * @haystack: input
  * @needle: input
  * Return: address or NULL
@@ -56,7 +56,7 @@ char *starts_by(const char *haystack, const char *needle)
 }
 
 /**
- * _strconcat - concatenate two strings
+ * *_strconcat - concatenate two strings
  * @dst: input
  * @src: input
  * Return: pointer to dst
