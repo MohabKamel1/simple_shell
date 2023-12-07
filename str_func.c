@@ -68,7 +68,7 @@ char *_strconcat(char *dst, char *src)
 
 	while (*dst)
 		dst++;
-	while(*src)
+	while (*src)
 		*dst++ = *src++;
 	*dst = *src;
 	return (ret);
