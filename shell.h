@@ -138,3 +138,20 @@ char *_strchar(char *, char *);
 
 char **strpw(char *, char *);
 char **strpw2(char *, char *);
+
+char *_mmset(char *, char, unsigned int);
+void vfree(char **);
+void *_reallocate(void *, unsigned int, unsigned int);
+
+int hfree(void **);
+
+int interact(info_t *);
+int is_delim(char, char *);
+int is_alpha(int);
+int _stoi(char *);
+
+int _errstoi(char *);
+void prt_error(info_t *, char *);
+int prt_dec(int, int);
+char *convert_n(long int, int, int);
+void remove_comment(char *);
