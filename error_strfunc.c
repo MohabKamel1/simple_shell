@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _erputs - print string
+ * _eputs - print string
  * @str: input
  * Return: void
  */
 
-void _erputs(char *str)
+void _eputs(char *str)
 {
 	int i = 0;
 
@@ -14,21 +14,21 @@ void _erputs(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_erputchar(str[i]);
+		_eputchar(str[i]);
 		i++;
 	}
 }
 
 /**
- * _erputchar - print c to stderr
+ * _eputchar - print c to stderr
  * @c: input
  * Return: 1, -1
  */
 
-int _erputchar(char c)
+int _eputchar(char c)
 {
 	static int i;
-	static char bu[WRITE_BUF_SIZE];
+	static char buf[WRITE_BUF_SIZE];
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{

@@ -168,7 +168,7 @@ size_t prt_ls(const list_t *);
 list_t *node_start_by(list_t *, char *, char);
 ssize_t get_nindex(list_t *, list_t *);
 
-void _erputs(char *);
-int _erputchar(char);
+void _eputs(char *);
+int _eputchar(char);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
