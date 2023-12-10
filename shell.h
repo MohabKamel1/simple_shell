@@ -155,3 +155,15 @@ void prt_error(info_t *, char *);
 int prt_dec(int, int);
 char *convert_n(long int, int, int);
 void remove_comment(char *);
+
+list_t *add_nodes(list_t **, const char *, int);
+list_t *add_nodeend(list_t **, const char *, int);
+size_t prt_ls_str(const list_t *);
+int delete_node_index(list_t **, unsigned int);
+void free_ls(list_t **);
+
+size_t ls_len(const list_t *);
+char **ls_strings(list_t *);
+size_t prt_ls(const list_t *);
+list_t *node_start_by(list_t *, char *, char);
+ssize_t get_nindex(list_t *, list_t *);
