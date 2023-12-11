@@ -185,4 +185,10 @@ int populate_envi_ls(info_t *);
 
 char **get_envi(info_t *);
 int _unsetenv(info_t *, char *);
-int _setenvi(info_t *, char * char *);
+int _setenvi(info_t *, char *, char *);
+
+char *get_history(info_t *info);
+int wr_history(info_t *info);
+int read_history(info_t *info);
+int build_history_ls(info_t *info, char *buf, int linecount);
+int renumber_history(info_t *info);
