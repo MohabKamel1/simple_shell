@@ -176,3 +176,13 @@ int _putsfd(char *str, int fd);
 void clear_inform(info_t *);
 void set_inform(info_t *, char **);
 void free_inform(info_t *, int);
+
+int _myenvi(info_t *);
+char *_getenvi(info_t *, const char *);
+int _mysetenvi(info_t *);
+int _myunsetenvi(info_t *);
+int populate_envi_ls(info_t *);
+
+char **get_envi(info_t *);
+int _unsetenv(info_t *, char *);
+int _setenvi(info_t *, char * char *);
