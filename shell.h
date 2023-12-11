@@ -172,3 +172,7 @@ void _eputs(char *);
 int _eputchar(char);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
+
+void clear_inform(info_t *);
+void set_inform(info_t *, char **);
+void free_inform(info_t *, int);
