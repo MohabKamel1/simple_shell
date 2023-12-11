@@ -192,3 +192,10 @@ int wr_history(info_t *info);
 int read_history(info_t *info);
 int build_history_ls(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
+
+int _exxit(info_t *);
+int _cdd(info_t *);
+int _helpp(info_t *);
+
+int _myhistory(info_t *);
+int _myalias(info_t *);
