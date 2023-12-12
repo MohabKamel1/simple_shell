@@ -111,8 +111,8 @@ int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-int is_cmd(info_t *, char *);
-char *dup_chars(char *, int, int);
+int i_cmd(info_t *, char *);
+char *dupp_char(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 int loophsh(char **);
@@ -199,3 +199,13 @@ int _helpp(info_t *);
 
 int _myhistory(info_t *);
 int _myalias(info_t *);
+
+ssize_t g_input(info_t *);
+int _getlinee(info_t *, char **, size_t *);
+void sigintHandler(int);
+
+int i_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
+int rep_alias(info_t *);
+int rep_var(info_t *);
+int rep_string(char **, char *);
