@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _strlength - return length string
+ * _strlength - length of string
  * @s: input
- * Retrun: no. length of string
+ * Return: noumber length of string
  */
 
 int _strlength(char *s)
