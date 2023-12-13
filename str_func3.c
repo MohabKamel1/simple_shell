@@ -39,7 +39,7 @@ char *_strncppy(char *dst, char *src, int n)
  * Return: concat. strings
  */
 
-char *_stnrconcat(char *dst, char *src, int n)
+char *_strnconcat(char *dst, char *src, int n)
 {
 	int i, j;
 	char *s = dst;
