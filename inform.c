@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * clear_inform - Enter data
+ * clear_info - initializes info_t struct
  * @info: input
  */
 
-void clear_inform(info_t *info)
+void clear_info(info_t *info)
 {
 	info->arg = NULL;
 	info->argv = NULL;
@@ -14,25 +14,26 @@ void clear_inform(info_t *info)
 }
 
 /**
- * set_inform - Enter data
+ * set_info - initializes info_t struct
  * @info: input
  * @av: input
  */
 
-void set_inform(info_t *info, char **av)
+void set_info(info_t *info, char **av)
 {
 	int i = 0;
 
 	info->fname = av[0];
 	if (info->arg)
 	{
-		info->argv = strpw(info->arg, " \t");
-		if (info->arg)
+		info->argv = strtow(info->arg, " \t");
+		if (!info->argv)
 		{
+
 			info->argv = malloc(sizeof(char *) * 2);
-			if (!info->argv)
+			if (info->argv)
 			{
-				info->argv[0] = strdupp(info->arg);
+				info->argv[0] = _strdup(info->arg);
 				info->argv[1] = NULL;
 			}
 		}
@@ -46,14 +47,14 @@ void set_inform(info_t *info, char **av)
 }
 
 /**
- * free_inform - Enter data
+ * free_info - frees info_t struct fields
  * @info: input
  * @all: input
  */
 
-void free_inform(info_t *info, int all)
+void free_info(info_t *info, int all)
 {
-	vfree(info->argv);
+	ffree(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
 	if (all)
@@ -61,16 +62,16 @@ void free_inform(info_t *info, int all)
 		if (!info->cmd_buf)
 			free(info->arg);
 		if (info->env)
-			free_ls(&(info->env));
+			free_list(&(info->env));
 		if (info->history)
-			free_ls(&(info->history));
+			free_list(&(info->history));
 		if (info->alias)
-			free_ls(&(info->alias);
-					vfree(info->environ);
-					info->envireon = NULL;
-					hfree((void **)info->cmd_buf);
-					if (info->readfd > 2)
-					close(info->readfd);
-					_putchar(BUF_FLUSH);
-					}
-					}
+			free_list(&(info->alias));
+		ffree(info->environ);
+			info->environ = NULL;
+		bfree((void **)info->cmd_buf);
+		if (info->readfd > 2)
+			close(info->readfd);
+		_putchar(BUF_FLUSH);
+	}
+}

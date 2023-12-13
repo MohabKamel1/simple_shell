@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * main - Entry point
+ * main - entry point
  * @ac: input
  * @av: input
- * Return: 0, 1
+ * Return: 0,1
  */
 
 int main(int ac, char **av)
@@ -13,9 +13,9 @@ int main(int ac, char **av)
 	int fd = 2;
 
 	asm ("mov %1, %0\n\t"
-			"add $3, %0"
-			: "=r" (fd)
-			: "r" (fd));
+		"add $3, %0"
+		: "=r" (fd)
+		: "r" (fd));
 
 	if (ac == 2)
 	{
@@ -27,7 +27,7 @@ int main(int ac, char **av)
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
-				_eputs(": 0: can not open ");
+				_eputs(": 0: Can't open ");
 				_eputs(av[1]);
 				_eputchar('\n');
 				_eputchar(BUF_FLUSH);

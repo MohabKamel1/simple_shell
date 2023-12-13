@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * *_mmset - memory with constant
- * @s: input
- * @b: input
- * @n: input
- * Return: pointer ti memory
+ **_memset - fills memory with a constant byte
+ *@s: input
+ *@b: input
+ *@n: input
+ *Return: (s)
  */
 
-char *_mmset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
@@ -18,11 +18,11 @@ char *_mmset(char *s, char b, unsigned int n)
 }
 
 /**
- * vfree - free strings
+ * ffree - frees a string of strings
  * @pp: input
  */
 
-void vfree(char **pp)
+void ffree(char **pp)
 {
 	char **a = pp;
 
@@ -34,31 +34,31 @@ void vfree(char **pp)
 }
 
 /**
- * _reallocate - block of memory to locate
+ * _realloc - reallocates a block of memory
  * @ptr: input
- * @o_size: input
- * @n_size: input
- * Return: pointer to old block
+ * @old_size: input
+ * @new_size: input
+ * Return: pointer
  */
 
-void *_reallocate(void *ptr, unsigned int o_size, unsigned int n_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p;
 
 	if (!ptr)
-		return (malloc(n_size));
-	if (!n_size)
+		return (malloc(new_size));
+	if (!new_size)
 		return (free(ptr), NULL);
-	if (n_size == o_size)
+	if (new_size == old_size)
 		return (ptr);
 
-	p = malloc(n_size);
+	p = malloc(new_size);
 	if (!p)
 		return (NULL);
 
-	o_szie = o_size < n_size ? o_size : n_size;
-	while (o_size--)
-		p[o_size] = ((char *)ptr)[o_size];
+	old_size = old_size < new_size ? old_size : new_size;
+	while (old_size--)
+		p[old_size] = ((char *)ptr)[old_size];
 	free(ptr);
 	return (p);
 }

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _strlength - length of string
+ * _strlen - returns the length of a string
  * @s: input
- * Return: noumber length of string
+ * Return: number
  */
 
-int _strlength(char *s)
+int _strlen(char *s)
 {
 	int i = 0;
 
@@ -19,13 +19,13 @@ int _strlength(char *s)
 }
 
 /**
- * _strcompar - comapre between two strings
+ * _strcmp - performs lexicogarphic comparison of two strangs.
  * @s1: input
- * @s2:input
- * Return: negative s1 <s2, positive s1 > s2, 0 s1 == s2
+ * @s2: input
+ * Return: number
  */
 
-int _strcompar(char *s1, char *s2)
+int _strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s2)
 	{
@@ -41,13 +41,13 @@ int _strcompar(char *s1, char *s2)
 }
 
 /**
- * *starts_by - if needle starts by haystack
+ * starts_with - checks if needle starts with haystack
  * @haystack: input
  * @needle: input
- * Return: address or NULL
+ * Return: NULL
  */
 
-char *starts_by(const char *haystack, const char *needle)
+char *starts_with(const char *haystack, const char *needle)
 {
 	while (*needle)
 		if (*needle++ != *haystack++)
@@ -56,20 +56,20 @@ char *starts_by(const char *haystack, const char *needle)
 }
 
 /**
- * *_strconcat - concatenate two strings
- * @dst: input
+ * _strcat - concatenates two strings
+ * @dest: input
  * @src: input
- * Return: pointer to dst
+ * Return: pointer
  */
 
-char *_strconcat(char *dst, char *src)
+char *_strcat(char *dest, char *src)
 {
-	char *ret = dst;
+	char *ret = dest;
 
-	while (*dst)
-		dst++;
+	while (*dest)
+		dest++;
 	while (*src)
-		*dst++ = *src++;
-	*dst = *src;
+		*dest++ = *src++;
+	*dest = *src;
 	return (ret);
 }

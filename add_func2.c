@@ -1,26 +1,26 @@
 #include "shell.h"
 
 /**
- * _errstoi - convert strings to imtegers
+ * _erratoi - converts a string to an integer
  * @s: input
- * Return: 0,-1
+ * Return: 0, -1
  */
 
-int _errstoi(char *s)
+int _erratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
 
 	if (*s == '+')
 		s++;
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0;  s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			result *= 10;
-			result += (s[i] - '0')
-				if (result > INT_MAX)
-					return (-1);
+			result += (s[i] - '0');
+			if (result > INT_MAX)
+				return (-1);
 		}
 		else
 			return (-1);
@@ -29,13 +29,13 @@ int _errstoi(char *s)
 }
 
 /**
- * prt_error - print error messages
+ * print_error - prints an error message
  * @info: input
  * @estr: input
  * Return: 0,-1
  */
 
-void prt_error(info_t *info, char *estr)
+void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");
@@ -47,19 +47,19 @@ void prt_error(info_t *info, char *estr)
 }
 
 /**
- * prt_dec - print decimal
+ * print_d - function prints a decimal (integer) number (base 10)
  * @input: input
  * @fd: input
- * Return: number of char
+ * Return: number
  */
 
-int prt_dec(int input, int fd)
+int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
-	if (fd == STFER_FILENO)
+	if (fd == STDERR_FILENO)
 		__putchar = _eputchar;
 	if (input < 0)
 	{
@@ -86,14 +86,14 @@ int prt_dec(int input, int fd)
 }
 
 /**
- * convert_n - convert func
+ * convert_number - converter function, a clone of itoa
  * @num: input
  * @base: input
  * @flags: input
  * Return: string
  */
 
-char *convert_n(long int num, int base, int flags)
+char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
@@ -105,13 +105,13 @@ char *convert_n(long int num, int base, int flags)
 	{
 		n = -num;
 		sign = '-';
+
 	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" :
-		"0123456789ABCDEF";
+	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do {
+	do	{
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
@@ -122,19 +122,19 @@ char *convert_n(long int num, int base, int flags)
 }
 
 /**
- * remove_comment - replaces function
+ * remove_comments - function replaces first instance of '#' with '\0'
  * @buf: input
  * Return: 0
  */
 
-void remove_comment(char *buf)
+void remove_comments(char *buf)
 {
 	int i;
 
 	for (i = 0; buf[i] != '\0'; i++)
 		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
 		{
-			buf[i] = '\0'
-				break;
+			buf[i] = '\0';
+			break;
 		}
 }

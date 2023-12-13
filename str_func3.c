@@ -1,22 +1,22 @@
 #include "shell.h"
 
 /**
- * *_strncppy - copy strings
- * @dst: input
- * @src: input
- * @n: input
- * Return: concat. strings
+ **_strncpy - copies a string
+ *@dest: input
+ *@src: input
+ *@n: input
+ *Return: string
  */
 
-char *_strncppy(char *dst, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i, j;
-	char *s = dst;
+	char *s = dest;
 
 	i = 0;
 	while (src[i] != '\0' && i < n - 1)
 	{
-		dst[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
 	if (i < n)
@@ -24,7 +24,7 @@ char *_strncppy(char *dst, char *src, int n)
 		j = i;
 		while (j < n)
 		{
-			dst[j] = '\0';
+			dest[j] = '\0';
 			j++;
 		}
 	}
@@ -32,41 +32,41 @@ char *_strncppy(char *dst, char *src, int n)
 }
 
 /**
- * *_strnconcat - concat. two strings
- * @dst: input
- * @src: input
- * @n: input
- * Return: concat. strings
+ **_strncat - concatenates two strings
+ *@dest: input
+ *@src: input
+ *@n: input
+ *Return: string
  */
 
-char *_strnconcat(char *dst, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
-	char *s = dst;
+	char *s = dest;
 
 	i = 0;
 	j = 0;
-	while (dst[i] != '\0')
+	while (dest[i] != '\0')
 		i++;
 	while (src[j] != '\0' && j < n)
 	{
-		dst[i] = src[j];
+		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	if (j < n)
-		dst[i] = '\0';
+		dest[i] = '\0';
 	return (s);
 }
 
 /**
- * *_strchar - locate a charaters
- * @s: input
- * @c: input
- * Return: s
+ **_strchr - locates a character in a string
+ *@s: input
+ *@c: input
+ *Return: (s)
  */
 
-char *_strchar(char *s, char c)
+char *_strchr(char *s, char c)
 {
 	do {
 		if (*s == c)

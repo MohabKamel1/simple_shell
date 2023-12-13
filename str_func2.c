@@ -1,34 +1,34 @@
 #include "shell.h"
 
 /**
- * *_strcppy - copies strings
- * @dst: input
+ * _strcpy - copies a string
+ * @dest: input
  * @src: input
- * Return: pointer to dst
+ * Return: pointer
  */
 
-char *_strcppy(char *dst, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	if (dst == src || src == 0)
-		return (dst);
+	if (dest == src || src == 0)
+		return (dest);
 	while (src[i])
 	{
-		dst[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dst[i] = 0;
-	return (dst);
+	dest[i] = 0;
+	return (dest);
 }
 
 /**
- * *_strdupp - duplicates strings
+ * _strdup - duplicates a string
  * @str: input
- * Return: pointer to duplicated
+ * Return: pointer
  */
 
-char *_strdupp(const char *str)
+char *_strdup(const char *str)
 {
 	int length = 0;
 	char *ret;
@@ -46,12 +46,12 @@ char *_strdupp(const char *str)
 }
 
 /**
- * _prt - print input strings
- * @str: input
- * Return: Empty
+ *_puts - prints an input string
+ *@str: input
+ * Return: Void
  */
 
-void _prt(char *str)
+void _puts(char *str)
 {
 	int i = 0;
 
@@ -65,9 +65,9 @@ void _prt(char *str)
 }
 
 /**
- * _putchar - append the char c
- * @c: input
- * Return: 1 or -1
+ * _putchar - writes the character c to stdout
+ * @c: inpu
+ * Return: 1,-1
  */
 
 int _putchar(char c)

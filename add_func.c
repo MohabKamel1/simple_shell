@@ -1,18 +1,18 @@
 #include "shell.h"
 
 /**
- * interact - shell interactive mode
+ * interactive - returns true
  * @info: input
- * Return: 1, 0
+ * Return: 1,0
  */
 
-int interact(info_t *info)
+int interactive(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - check char.
+ * is_delim - checks if character is a delimeter
  * @c: input
  * @delim: input
  * Return: 1,0
@@ -27,9 +27,9 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * _isalpha - check alpha char
- * @c: input
- * Return: 1,0
+ *_isalpha - checks for alphabetic character
+ *@c: input
+ *Return: 1,0
  */
 
 int _isalpha(int c)
@@ -41,17 +41,17 @@ int _isalpha(int c)
 }
 
 /**
- * _stoi - convert strings to integers
- * @s: input
- * Return: 0
+ *_atoi - converts a string to an integer
+ *@s: input
+ *Return: 0
  */
 
-int _stoi(char *s)
+int _atoi(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (i = 0; s[i] != '\0' && flag != 2; i++)
+	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
 		if (s[i] == '-')
 			sign *= -1;
@@ -65,6 +65,7 @@ int _stoi(char *s)
 		else if (flag == 1)
 			flag = 2;
 	}
+
 	if (sign == -1)
 		output = -result;
 	else
